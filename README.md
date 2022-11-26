@@ -1,15 +1,21 @@
 # zigy_task
 
-A new Flutter project.
+Assignment submission for Zigy Job Application
 
-## Getting Started
+## Objectives
 
-This project is a starting point for a Flutter application.
+Create a Flutter App and integrate the following apis:
 
-A few resources to get you started if this is your first Flutter project:
+- get users (/api/users?page=2)
+- create user (/api/users)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Also make api integration visible with a basic UI.
+
+## Submission
+
+Attach GitHUb repo along with apk and iso exports
+
+## Support
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
