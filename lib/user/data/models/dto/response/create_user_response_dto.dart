@@ -1,15 +1,15 @@
 import 'package:zigy_task/user/user.dart';
 
-class NewUserModel extends NewUser {
-  const NewUserModel({
+class CreateUserResponseDto extends NewUser {
+  const CreateUserResponseDto({
     required super.name,
     required super.job,
     required super.id,
     required super.createdAt,
   });
 
-  factory NewUserModel.fromJson(Map<String, dynamic> json) {
-    return NewUserModel(
+  factory CreateUserResponseDto.fromJson(Map<String, dynamic> json) {
+    return CreateUserResponseDto(
       name: json['name'],
       job: json['job'],
       id: json['id'],

@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:zigy_task/user/user.dart';
 
 class UserRepositoryImpl implements UserRepository {
-  final RemoteDataSource remoteDataSource;
+  final UserRemoteDataSource remoteDataSource;
 
   UserRepositoryImpl({required this.remoteDataSource});
   @override

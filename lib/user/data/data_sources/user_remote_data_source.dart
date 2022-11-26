@@ -1,21 +1,23 @@
 import 'dart:convert';
 
 import 'package:zigy_task/core/core.dart';
+
 import 'package:zigy_task/user/user.dart';
 import 'package:http/http.dart' as http;
 
-abstract class RemoteDataSource {
+abstract class UserRemoteDataSource {
   Future<List<UserModel>> getUsers();
 
-  Future<NewUserModel> createUser({required String name, required String job});
+  Future<CreateUserResponseDto> createUser(
+      {required String name, required String job});
 }
 
-class RemoteDataSourceImpl implements RemoteDataSource {
+class UserRemoteDataSourceImpl implements UserRemoteDataSource {
   final http.Client client;
 
-  RemoteDataSourceImpl({required this.client});
+  UserRemoteDataSourceImpl({required this.client});
   @override
-  Future<NewUserModel> createUser(
+  Future<CreateUserResponseDto> createUser(
       {required String name, required String job}) async {
     final response = await client.post(
       Uri.parse(APIConstants.createUser),
@@ -27,7 +29,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
     if (response.statusCode == 201) {
       final jsonMap = jsonDecode(response.body);
-      return NewUserModel.fromJson(jsonMap);
+      return CreateUserResponseDto.fromJson(jsonMap);
     } else {
       throw ServerException();
     }
